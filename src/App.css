@@ -1,0 +1,757 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #16a34a;
+  --dark: #111827;
+  --gray: #6b7280;
+  --light: #f8fafc;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+  color: var(--dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 7%;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.logo span {
+  color: var(--dark);
+}
+
+.logo b {
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-book,
+.primary-btn,
+.search-btn {
+  background: var(--primary);
+  color: white;
+  padding: 13px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  transition: 0.3s;
+}
+
+.nav-book:hover,
+.primary-btn:hover,
+.search-btn:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+}
+
+.menu-btn {
+  display: none;
+  border: none;
+  background: none;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 650px;
+  padding: 100px 7%;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(10,15,25,0.95), rgba(10,15,25,0.5)),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=90")
+    center/cover;
+  color: white;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-tag,
+.section-tag {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: clamp(45px, 6vw, 78px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 25px 0;
+}
+
+.hero h1 span,
+.section-heading h2 span,
+.about-content h2 span {
+  color: var(--primary);
+}
+
+.hero-content > p {
+  color: #d1d5db;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border: 1px solid #ffffff70;
+  border-radius: 8px;
+  color: white;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.hero-stats h3 {
+  font-size: 28px;
+  color: var(--primary);
+}
+
+.hero-stats p {
+  font-size: 13px;
+  color: #d1d5db;
+  margin-top: 8px;
+}
+
+/* SEARCH */
+
+.search-section {
+  padding: 0 7%;
+  margin-top: -35px;
+  position: relative;
+  z-index: 2;
+}
+
+.search-box {
+  background: white;
+  padding: 20px 25px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 8px 35px rgba(0,0,0,0.1);
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+/* SECTIONS */
+
+.cars-section,
+.location-section,
+.contact-section {
+  padding: 100px 7%;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-heading h2,
+.about-content h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  margin: 18px 0;
+}
+
+.section-heading p {
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.category {
+  border: 1px solid #e5e7eb;
+  background: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.category.active,
+.category:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* CARDS */
+
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.car-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.35s;
+  background: white;
+}
+
+.car-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.car-image {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.car-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.car-card:hover .car-image img {
+  transform: scale(1.08);
+}
+
+.car-category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: var(--primary);
+  color: white;
+  padding: 7px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.car-info {
+  padding: 22px;
+}
+
+.car-info h3 {
+  font-size: 20px;
+}
+
+.car-description {
+  color: var(--gray);
+  font-size: 13px;
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+.car-details {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 15px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.car-details span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.car-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.price h3 {
+  color: var(--primary);
+  font-size: 23px;
+}
+
+.price span {
+  color: var(--gray);
+  font-size: 12px;
+}
+
+.book-btn {
+  background: var(--dark);
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 12px 18px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  background: var(--primary);
+}
+
+.no-cars {
+  text-align: center;
+  color: var(--gray);
+  padding: 30px;
+}
+
+/* ABOUT */
+
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+  padding: 90px 7%;
+  background: var(--light);
+}
+
+.about-image img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.about-content > p {
+  color: var(--gray);
+  line-height: 1.9;
+  margin: 20px 0;
+}
+
+.about-points {
+  margin: 25px 0;
+}
+
+.about-points p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.about-points svg {
+  color: var(--primary);
+}
+
+/* LOCATION */
+
+.location-container {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+}
+
+.location-details {
+  background: var(--light);
+  padding: 45px;
+}
+
+.location-details > svg {
+  color: var(--primary);
+}
+
+.location-details h3 {
+  font-size: 25px;
+  margin: 20px 0;
+}
+
+.location-details p {
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.map {
+  min-height: 350px;
+}
+
+/* CONTACT */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.contact-card {
+  text-align: center;
+  padding: 35px 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.contact-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px);
+}
+
+.contact-card svg {
+  color: var(--primary);
+  width: 30px;
+  height: 30px;
+}
+
+.contact-card h3 {
+  margin: 18px 0 10px;
+}
+
+.contact-card p {
+  color: var(--gray);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+/* FOOTER */
+
+.footer {
+  background: var(--dark);
+  color: white;
+  padding: 45px 7%;
+  text-align: center;
+}
+
+.footer .logo {
+  justify-content: center;
+}
+
+.footer > p {
+  color: #9ca3af;
+  margin: 18px 0;
+}
+
+.copyright {
+  font-size: 13px;
+}
+
+/* BOOKING MODAL */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.booking-modal {
+  background: white;
+  width: 100%;
+  max-width: 500px;
+  padding: 35px;
+  border-radius: 15px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.booking-modal h2 {
+  margin-bottom: 10px;
+}
+
+.modal-price {
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #f3f4f6;
+  border: none;
+  padding: 7px;
+  border-radius: 50%;
+}
+
+.booking-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.booking-modal label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.booking-modal input {
+  padding: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  outline: none;
+}
+
+.booking-modal input:focus {
+  border-color: var(--primary);
+}
+
+.total-price {
+  background: #f0fdf4;
+  color: var(--primary);
+  padding: 15px;
+  border-radius: 7px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.full-btn {
+  justify-content: center;
+  width: 100%;
+}
+
+.booking-message {
+  margin-top: 20px;
+  color: var(--primary);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .cars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-section {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 5%;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-book {
+    display: none;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 5%;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 15px 0;
+  }
+
+  .hero {
+    padding: 75px 5%;
+    min-height: 550px;
+  }
+
+  .hero-stats {
+    gap: 25px;
+  }
+
+  .search-section,
+  .cars-section,
+  .location-section,
+  .contact-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .search-box {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .search-btn {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .cars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section {
+    grid-template-columns: 1fr;
+    padding: 60px 5%;
+  }
+
+  .about-image img {
+    height: 300px;
+  }
+
+  .location-container {
+    grid-template-columns: 1fr;
+  }
+
+  .location-details {
+    padding: 30px;
+  }
+
+  .map {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 17px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero-stats {
+    gap: 20px;
+  }
+
+  .hero-stats h3 {
+    font-size: 22px;
+  }
+
+  .hero-stats p {
+    font-size: 11px;
+  }
+
+  .search-box input {
+    min-width: 0;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-modal {
+    padding: 25px;
+  }
+}
+
+.instagram-icon {
+  color: #15803d;
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover .instagram-icon {
+  transform: scale(1.2);
+}
+
